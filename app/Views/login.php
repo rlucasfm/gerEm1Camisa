@@ -36,8 +36,8 @@
                         <!-- Nested Row within Card Body -->
                         <div class="row"> 
                             <div class="col-lg-6 justify-content-center align-self-center">
-                                <img src="/static/img/rlicon2.png" class="img-fluid mt-4 d-lg-none" style="padding: 10px;">
-                                <img src="/static/img/rlicon2.png" class="img-fluid ml-4 d-none d-lg-block">
+                                <img src="/static/img/logo-2.png" class="img-fluid mt-4 d-lg-none" style="padding: 10px;">
+                                <img src="/static/img/logo-2.png" class="img-fluid ml-4 d-none d-lg-block">
                             </div>                           
                             <div class="col-lg-6">
                                 <div class="p-5">

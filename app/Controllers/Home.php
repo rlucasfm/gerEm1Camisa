@@ -5,10 +5,16 @@ class Home extends BaseController
 	public function index()
 	{
 		$data = [
-			"title" => "Template - CI4",
+			"title" => "Gerencial - Em1",
+			"name" => session()->get("name"),
+			"menuActiveID" 	=> "dash",
+			"errorMsg" 		=> session()->get('errorMsg'),
+			"successMsg" 	=> session()->get('successMsg'),
 		];
 
-		echo view('welcome_message', $data);
+		echo view('templates/header', $data);
+		echo "123";
+		echo view('templates/footer', $data);
 	}
 
 	//--------------------------------------------------------------------

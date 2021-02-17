@@ -1,17 +1,17 @@
 <?php namespace App\Controllers;
 
-use App\Models\Lista;
+use App\Models\Cliente;
 
 class UnitTester extends BaseController
 {
 	public function index()
 	{
-		$lista = new Lista();
+		$cliente = new Cliente();
 		// $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load('C:\Users\richard\Downloads\Modelo_Importação EudesRO_Novo_Modelo 2099.xls');
 		// $tabela = $spreadsheet->getActiveSheet()->toArray();
 
 		echo "<pre>";
-		var_dump($lista->listarAPI(1000));
+		var_dump($cliente->detalhes(1));
 		echo "</pre>";		
 		
 	}
