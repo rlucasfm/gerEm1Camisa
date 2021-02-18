@@ -12,8 +12,7 @@ class Home extends BaseController
 			"successMsg" 	=> session()->get('successMsg'),
 		];
 
-		echo view('templates/header', $data);
-		echo "123";
+		echo view('templates/header', $data);		
 		echo view('templates/footer', $data);
 	}
 

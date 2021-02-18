@@ -11,7 +11,7 @@ class UnitTester extends BaseController
 		// $tabela = $spreadsheet->getActiveSheet()->toArray();
 
 		echo "<pre>";
-		var_dump($cliente->detalhes(1));
+		echo($cliente->atualizarRastreio(1, '123'));
 		echo "</pre>";		
 		
 	}

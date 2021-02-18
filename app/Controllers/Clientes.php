@@ -45,6 +45,45 @@ class Clientes extends BaseController
 		echo view('clientes/detalhes', $data);
 		echo view('templates/footer', $data);
     }
+
+	public function atualizarCliente()
+	{
+		$cliente = new Cliente();
+
+		$id_aluno = $this->request->getPost('id_aluno');
+		$codrastreio = $this->request->getPost('codrastreio');
+		$endereco = $this->request->getPost('endereco');
+		$numero = $this->request->getPost('numero');
+		$bairro = $this->request->getPost('bairro');
+		$complemento = $this->request->getPost('complemento');
+		$cidade = $this->request->getPost('cidade');
+		$estado = $this->request->getPost('estado');
+		$tamanhoCamisa = $this->request->getPost('tamanhoCamisa');
+		$telefone = $this->request->getPost('telefone');
+
+		$data = [
+			'id_aluno' => $id_aluno,
+			'codrastreio' => $codrastreio,
+			'endereco' => $endereco,
+			'numero' => $numero,
+			'bairro' => $bairro,
+			'complemento' => $complemento,
+			'cidade' => $cidade,
+			'estado' => $estado,
+			'tamanhoCamisa' => $tamanhoCamisa,
+			'telefone' => $telefone
+		];
+
+		try {
+			$response = $cliente->atualizarCliente($data);
+			$success = TRUE;
+		} catch (\Exception $err) {
+			session()->setFlashdata('errorMsg', 'Houve um erro... '.$err->getMessage());
+			$success = FALSE;
+		}
+
+		if($success) session()->setFlashdata('successMsg', $response);
+	}
 	//--------------------------------------------------------------------
 
 }

@@ -9,7 +9,7 @@ class Cliente extends Model
     protected $primaryKey       = 'id_aluno';
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
-    protected $allowedFields    = ['endereco, numero, bairro, complemento, cidade, estado, cep, tamanhoCamisa, codrastreio'];
+    protected $allowedFields    = ['endereco', 'numero', 'bairro', 'complemento', 'cidade', 'estado', 'cep', 'tamanhoCamisa', 'codrastreio', 'telefone'];
     protected $useTimestamps    = false;
     protected $skipValidation   = true;
 
@@ -17,7 +17,7 @@ class Cliente extends Model
     {
         $datalib = new Time('-15 day');
         $datalib = $datalib->toDateString();        
-        $liberados = $this->where("dataCadastro >=", $datalib)      
+        $liberados = $this->where("dataCadastro <=", $datalib)      
                         ->paginate(10, 'group1');
 
         return $liberados;
@@ -28,5 +28,15 @@ class Cliente extends Model
         $cliente = $this->find($id_cliente);
         
         return $cliente;
+    }
+
+    public function atualizarCliente($data)
+    {
+        try {
+            $this->save($data);
+            return('Cliente atualizado');
+        } catch (\Exception $err) {
+            throw $err;
+        }        
     }
 }
