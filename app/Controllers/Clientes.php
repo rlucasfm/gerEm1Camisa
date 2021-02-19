@@ -6,7 +6,7 @@ class Clientes extends BaseController
 {
 	public function index()
 	{
-
+		return redirect()->to('/');
 	}
 
     public function liberados()
@@ -83,6 +83,95 @@ class Clientes extends BaseController
 		}
 
 		if($success) session()->setFlashdata('successMsg', $response);
+	}
+
+	public function gerarEtiqueta($id_cliente)
+	{		
+		$cliente = new Cliente();
+		$detalhes = $cliente->detalhes($id_cliente);
+
+		$image = \Config\Services::image()
+				->withFile('static/img/etiqueta.jpg')	
+				->text(utf8_decode($detalhes->nome), [
+					'color' 	 => '#000000',
+					'opacity'    => 0,
+					'withShadow' => false,
+					'hAlign'     => 'left',
+					'vAlign'     => 'center',
+					'hOffset'	 => 30,
+					'vOffset'	 => 540,					
+					'fontSize'   => 18,
+					'fontPath'   => realpath('static/font/cmuntb.ttf')					
+				])
+				->text(utf8_decode($detalhes->endereco ?? 'Sem endereço'), [
+					'color' 	 => '#000000',
+					'opacity'    => 0,
+					'withShadow' => false,
+					'hAlign'     => 'left',
+					'vAlign'     => 'center',
+					'hOffset'	 => 30,
+					'vOffset'	 => 562,					
+					'fontSize'   => 18,
+					'fontPath'   => realpath('static/font/cmuntb.ttf')
+				])	
+				->text(utf8_decode($detalhes->numero ?? 'Sem numero'), [
+					'color' 	 => '#000000',
+					'opacity'    => 0,
+					'withShadow' => false,
+					'hAlign'     => 'left',
+					'vAlign'     => 'center',
+					'hOffset'	 => 30,
+					'vOffset'	 => 582,					
+					'fontSize'   => 18,
+					'fontPath'   => realpath('static/font/cmuntb.ttf')
+				])
+				->text(utf8_decode($detalhes->bairro ?? 'Sem bairro'), [
+					'color' 	 => '#000000',
+					'opacity'    => 0,
+					'withShadow' => false,
+					'hAlign'     => 'left',
+					'vAlign'     => 'center',
+					'hOffset'	 => 30,
+					'vOffset'	 => 602,					
+					'fontSize'   => 18,
+					'fontPath'   => realpath('static/font/cmuntb.ttf')
+				])
+				->text(utf8_decode($detalhes->cep ?? 'Sem cep'), [
+					'color' 	 => '#000000',
+					'opacity'    => 0,
+					'withShadow' => false,
+					'hAlign'     => 'left',
+					'vAlign'     => 'center',
+					'hOffset'	 => 30,
+					'vOffset'	 => 625,					
+					'fontSize'   => 18,
+					'fontPath'   => realpath('static/font/cmuntb.ttf')
+				])
+				->text(utf8_decode($detalhes->cidade ?? 'Sem cidade').'-'.utf8_decode($detalhes->estado ?? 'ZZ'), [
+					'color' 	 => '#000000',
+					'opacity'    => 0,
+					'withShadow' => false,
+					'hAlign'     => 'left',
+					'vAlign'     => 'center',
+					'hOffset'	 => 170,
+					'vOffset'	 => 625,					
+					'fontSize'   => 18,
+					'fontPath'   => realpath('static/font/cmuntb.ttf')
+				])
+				->text(utf8_decode($detalhes->complemento ?? 'Sem complemento'), [
+					'color' 	 => '#000000',
+					'opacity'    => 0,
+					'withShadow' => false,
+					'hAlign'     => 'left',
+					'vAlign'     => 'center',
+					'hOffset'	 => 360,
+					'vOffset'	 => 700,					
+					'fontSize'   => 12,
+					'fontPath'   => realpath('static/font/cmuntb.ttf')
+				])
+				->save('static/img/tempetiq.jpg', 100);
+				
+		echo view('clientes/etiqueta');
 	}
 	//--------------------------------------------------------------------
 

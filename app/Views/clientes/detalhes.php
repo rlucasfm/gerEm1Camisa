@@ -54,7 +54,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="complemento">Complemento:</label>
-                            <input type="text" class="form-control" name="complemento" id="complemento" value="<?= esc($cliente->complemento); ?>">   
+                            <input type="text" class="form-control" name="complemento" id="complemento" value="<?= esc($cliente->complemento); ?>" maxlength="32">   
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -89,6 +89,7 @@
                 </div>            
                 <div class="row justify-content-center">
                     <button type="button" class="btn btn-primary mt-4" id="btnSalvar">Atualizar código de rastreio</button>
+                    <a href="<?= esc('/clientes/gerarEtiqueta/'.$cliente->id_aluno) ?>" target="_blank"><button type="button" class="btn btn-success ml-4 mt-4" id="btnPrint">Imprimir etiqueta</button></a>
                 </div>  
             </form>                          
         </div>

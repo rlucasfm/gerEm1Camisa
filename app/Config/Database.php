@@ -22,7 +22,8 @@ class Database extends \CodeIgniter\Database\Config
 	 *
 	 * @var string
 	 */
-	public $defaultGroup = 'default';
+	//public $defaultGroup = 'default';
+	public $defaultGroup = (ENVIRONMENT === 'production') ? 'prodserver' : 'localhost';
 
 	/**
 	 * The default database connection.
@@ -30,6 +31,60 @@ class Database extends \CodeIgniter\Database\Config
 	 * @var array
 	 */
 	public $default = [
+		'DSN'      => '',
+		'hostname' => 'localhost',
+		'username' => 'root',
+		'password' => '',
+		'database' => 'u951804619_200h',
+		'DBDriver' => 'MySQLi',
+		'DBPrefix' => '',
+		'pConnect' => false,
+		'DBDebug'  => (ENVIRONMENT !== 'production'),
+		'cacheOn'  => false,
+		'cacheDir' => '',
+		'charset'  => 'utf8',
+		'DBCollat' => 'utf8_general_ci',
+		'swapPre'  => '',
+		'encrypt'  => false,
+		'compress' => false,
+		'strictOn' => false,
+		'failover' => [],
+		'port'     => 3306,
+	];
+
+	/**
+	 * Conexão de produção em server
+	 *
+	 * @var array
+	 */
+	public $prodserver = [
+		'DSN'      => '',
+		'hostname' => 'localhost',
+		'username' => 'u951804619_200h',
+		'password' => 'Suporte0101011!',
+		'database' => 'u951804619_200h',
+		'DBDriver' => 'MySQLi',
+		'DBPrefix' => '',
+		'pConnect' => false,
+		'DBDebug'  => (ENVIRONMENT !== 'production'),
+		'cacheOn'  => false,
+		'cacheDir' => '',
+		'charset'  => 'utf8',
+		'DBCollat' => 'utf8_general_ci',
+		'swapPre'  => '',
+		'encrypt'  => false,
+		'compress' => false,
+		'strictOn' => false,
+		'failover' => [],
+		'port'     => 3306,
+	];
+
+	/**
+	 * Conexão localhost
+	 *
+	 * @var array
+	 */
+	public $localhost = [
 		'DSN'      => '',
 		'hostname' => 'localhost',
 		'username' => 'root',
