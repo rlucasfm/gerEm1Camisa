@@ -89,7 +89,7 @@
                 </div>            
                 <div class="row justify-content-center">
                     <button type="button" class="btn btn-primary mt-4" id="btnSalvar">Atualizar código de rastreio</button>
-                    <a href="<?= esc('/clientes/gerarEtiqueta/'.$cliente->id_aluno) ?>" target="_blank"><button type="button" class="btn btn-success ml-4 mt-4" id="btnPrint">Imprimir etiqueta</button></a>
+                    <a href="<?php echo base_url('/clientes/gerarEtiqueta/'.$cliente->id_aluno) ?>" target="_blank"><button type="button" class="btn btn-success ml-4 mt-4" id="btnPrint">Imprimir etiqueta</button></a>
                 </div>  
             </form>                          
         </div>
@@ -111,7 +111,7 @@ $('#btnSalvar').on('click', () => {
 
     $.ajax({
         type: 'post',
-        url: '/clientes/atualizarCliente',
+        url: "<?php echo base_url('/clientes/atualizarCliente'); ?>",
         data: {id_aluno:id_aluno, codrastreio: codrastreio, endereco: endereco, numero: numero, bairro: bairro, complemento: complemento, cidade: cidade, estado: estado, tamanhoCamisa: tamanhoCamisa, telefone: telefone},
         success: function(data){
             location.reload(true);

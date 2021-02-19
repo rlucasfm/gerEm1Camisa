@@ -12,28 +12,28 @@
     <title><?= esc($title) ?></title>
 
     <!-- Custom fonts for this template-->
-    <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/gerencial/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="/static/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/gerencial/static/css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- CSS MAIN particular -->
-    <link href="/static/css/main.css" rel="stylesheet">
+    <link href="/gerencial/static/css/main.css" rel="stylesheet">
 
     <!-- CSS para Impressão -->
-    <link rel="stylesheet" type="text/css" href="/static/css/print.min.css">
+    <link rel="stylesheet" type="text/css" href="/gerencial/static/css/print.min.css">
 
     <!-- LOAD JQUERY FIRST -->
-    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/gerencial/static/vendor/jquery/jquery.min.js"></script>
     <!-- Bootstrap core JavaScript-->    
-    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/gerencial/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Plugin própria para Mascaras -->
-    <script src="/static/js/mask.js"></script>
+    <script src="/gerencial/static/js/mask.js"></script>
     <!-- Lib para impressão -->
-    <script src="/static/js/print.min.js"></script>
+    <script src="/gerencial/static/js/print.min.js"></script>
 
 </head>
 
@@ -63,7 +63,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item" id="dash">
-                <a class="nav-link" href="/">
+                <a class="nav-link" href="<?php echo base_url('/'); ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Início</span></a>
             </li>
@@ -87,7 +87,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Clientes:</h6>
-                        <a class="collapse-item" href="/clientes/liberados">Liberados para envio</a>                      
+                        <a class="collapse-item" href="<?php echo base_url('/clientes/liberados'); ?>">Liberados para envio</a>                      
                     </div>
                 </div>
             </li>
@@ -121,7 +121,7 @@
 
             <!-- Sidebar Message -->
             <div class="sidebar-card">
-                <img class="sidebar-card-illustration mb-2" src="/static/img/undraw_rocket.svg" alt="">
+                <img class="sidebar-card-illustration mb-2" src="/gerencial/static/img/undraw_rocket.svg" alt="">
                 <p class="text-center mb-2"><strong>RL Software</strong> oferece os melhores sistemas, quer saber mais?</p>
                 <a class="btn btn-success btn-sm" href="https://www.richardlucas.com.br" target="_blank">Saiba mais!</a>
             </div>
@@ -136,7 +136,7 @@
             <div id="content" class="overflow-hidden">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 /gerencial/static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -185,7 +185,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= esc($name); ?></span>
                                 <img class="img-profile rounded-circle"
-                                    src="/static/img/undraw_profile.svg">
+                                    src="/gerencial/static/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

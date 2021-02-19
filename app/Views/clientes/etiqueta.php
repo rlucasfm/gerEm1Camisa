@@ -7,6 +7,6 @@
     <title>Etiqueta para Impressão</title>
 </head>
 <body>
-    <img src="/static/img/tempetiq.jpg" height="100%" width="100%">
+    <img src="/gerencial/static/img/tempetiq.jpg" height="100%" width="100%">
 </body>
 </html>

@@ -6,7 +6,7 @@ class Clientes extends BaseController
 {
 	public function index()
 	{
-		return redirect()->to('/');
+		return redirect()->to(base_url('/'));
 	}
 
     public function liberados()
@@ -91,7 +91,7 @@ class Clientes extends BaseController
 		$detalhes = $cliente->detalhes($id_cliente);
 
 		$image = \Config\Services::image()
-				->withFile('static/img/etiqueta.jpg')	
+				->withFile(realpath('static/img/etiqueta.jpg'))	
 				->text(utf8_decode($detalhes->nome), [
 					'color' 	 => '#000000',
 					'opacity'    => 0,
@@ -169,7 +169,7 @@ class Clientes extends BaseController
 					'fontSize'   => 12,
 					'fontPath'   => realpath('static/font/cmuntb.ttf')
 				])
-				->save('static/img/tempetiq.jpg', 100);
+				->save(realpath('static/img/tempetiq.jpg'), 100);
 				
 		echo view('clientes/etiqueta');
 	}
