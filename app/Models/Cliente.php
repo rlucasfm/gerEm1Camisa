@@ -15,7 +15,7 @@ class Cliente extends Model
 
     public function listarLiberados()
     {
-        $datalib = new Time('-15 day');
+        $datalib = new Time('-7 day');
         $datalib = $datalib->toDateString();        
         $liberados = $this->where("dataCadastro <=", $datalib)      
                         ->paginate(10, 'group1');
