@@ -89,7 +89,7 @@
                 </div>            
                 <div class="row justify-content-center">
                     <button type="button" class="btn btn-primary mt-4" id="btnSalvar">Atualizar código de rastreio</button>
-                    <a href="<?php echo base_url('/clientes/gerarEtiqueta/'.$cliente->id_aluno) ?>" target="_blank"><button type="button" class="btn btn-success ml-4 mt-4" id="btnPrint">Imprimir etiqueta</button></a>
+                    <a href="<?php echo('../gerarEtiqueta/'.$cliente->id_aluno) ?>" target="_blank"><button type="button" class="btn btn-success ml-4 mt-4" id="btnPrint">Imprimir etiqueta</button></a>
                 </div>  
             </form>                          
         </div>
